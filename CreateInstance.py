@@ -3,10 +3,10 @@
 
 # Author: GHARBI Houssem
 
-import sys
+import sys, os
 
 """
-execution: python CreateInstance.py -in1 fichier1.txt -in2 fichier2.txt
+execution: python CreateInstance.py -in1 Parseur/fichier1.txt -in2 Parseur/fichier2.txt
 
 genere 4 fichiers:
 - Instances_enzyme.sql
@@ -34,10 +34,12 @@ f_lines1 = f_in1.read().splitlines()
 f_in2 = open(File_IN2, 'r')
 f_lines2 = f_in2.read().splitlines()
 
-f_enzyme = open("Instances_enzyme.sql","w+")
-f_S = open("Instances_swissprot.sql","w+")
-f_P = open("Instances_prosite.sql","w+")
-f_Pub = open("Instances_publication.sql","w+")
+DataBase = "DataBase"
+os.system("mkdir -p %s"%(DataBase))
+f_enzyme = open("%s/Instances_enzyme.sql"%(DataBase),"w+")
+f_S = open("%s/Instances_swissprot.sql"%(DataBase),"w+")
+f_P = open("%s/Instances_prosite.sql"%(DataBase),"w+")
+f_Pub = open("%s/Instances_publication.sql"%(DataBase),"w+")
 
 
 
