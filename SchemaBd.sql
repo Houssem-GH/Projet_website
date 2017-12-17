@@ -1,7 +1,7 @@
 -- #Creation du schema du projet web
 
 
-CREATE TABLE enzyme (EC VARCHAR(15), Officiel_Name VARCHAR(150),	
+CREATE TABLE enzyme (EC VARCHAR(15), Official_Name VARCHAR(150),	
 Other_Name VARCHAR(150), Coefacteur VARCHAR(100), Commentaire VARCHAR(1500), 
 Activity VARCHAR(1000), PRIMARY KEY (EC));
 
