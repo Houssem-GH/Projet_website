@@ -1,8 +1,17 @@
-h1
+h1,h3
 {
   text-align: center;
 }
 
+body
+{
+color:black;
+background-color:white;
+background-image:url(DEFAULT_FOND_PAGE.jpg);
+background-attachment:fixed;
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+background-size: cover; /* version standardisée */
+}
 
 #onglets
 {
