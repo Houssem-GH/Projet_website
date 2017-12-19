@@ -14,7 +14,7 @@ $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 $headers .= "From: $nom <$mail>\r\nReply-to : $nom <$mail>\nX-Mailer:PHP";
 
 $subject="$objet";
-$destinataire="e.see.gd@gmail.com"; //remplacez "webmaster@votre-site.com" par votre adresse e-mail
+$destinataire="e.see.gd@gmail.com"; 
 $body="$message";
 if (mail($destinataire,$subject,$body,$headers)) {
 echo "Votre mail a été envoyé<br>";
@@ -23,5 +23,5 @@ echo "Une erreur s'est produite";
 }
 ?></p>
 <p align="center">Vous allez bientot etre redirigé vers la page d'acceuil<br>
-Si vous n'etes pas redirigé au bout de 5 secondes cliquez <a href="http://www.votre-site.com">ici
+Si vous n'etes pas redirigé au bout de 5 secondes cliquez <a href="Page_principale.html">ici
 </a></p>
