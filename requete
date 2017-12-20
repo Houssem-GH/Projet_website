@@ -1,0 +1,23 @@
+Les Requetes possibles:
+
+- entrer un Ec num et avoir toutes les informations:
+
+SELECT enzyme.official_name, enzyme.other_name, enzyme.coefacteur, enzyme.commentaire, enzyme.activity, prosite.id_p, swissprot.id_sp, publication.titre, publication.year_pub, publication.auteurs 
+FROM enzyme, swissprot, prosite, publication
+WHERE enzyme.ec = "La VARIABLE entrée" and enzyme.ec = prosite.ec and enzyme.ec = swissprot.ec and enzyme.ec = publication.ec
+
+
+
+-entrer le nom d'une enzyme (exemple = deshydrogenase):
+
+SELECT enzyme.ec
+FROM enzyme
+WHERE enzyme.official_name LIKE '%la variable%' or enzyme.other_name LIKE '%la variable%'
+
+(du coup ça affiche la liste des ec num, on pourra faire des liens que lorsqu'on clique sur un ec, on fait la premiere requete) 
+(je te laisse gerer l'affichage :D)
+
+
+un lien qui pourra t'aider: http://www.grappa.univ-lille3.fr/polys/reseaux-2004/reseaux063.html
+
+regarde aussi le fichier bd.txt (le prof nous l'a fourni)
