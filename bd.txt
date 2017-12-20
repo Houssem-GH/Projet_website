@@ -1,0 +1,24 @@
+<?php
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=prog_web;charset=utf8','olivier','lespinet');
+		
+	}
+	catch (Exception $e)
+	{
+        	die('Erreur : ' . $e->getMessage());
+	}
+	
+        $answer = $bdd->query('SELECT LEGACY_GOLDSTAMP,NCBI_PROJECT_NAME,PROJECT_TYPE FROM gold WHERE SPECIES like \'Homo sapiens\' ');
+?>
+        <TABLE>
+<?php
+        $i=0;
+        while ($data = $answer->fetch())
+        {
+            $i++;
+            echo '<TR><TD>'.$i.'</TD><TD>'.$data['LEGACY_GOLDSTAMP'].'</TD><TD>'.$data['NCBI_PROJECT_NAME'].'</TD><TD>'.$data['PROJECT_TYPE'].'</TD></TR>';
+        }
+	$answer->closeCursor();
+?>
+        </TABLE>
