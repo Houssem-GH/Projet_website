@@ -5,7 +5,7 @@
 		<?php
 			try
 			{
-				$bdd = new PDO('pgsql:dbname=Prog_Web host=localhost','postgres','*****');
+				$bdd = new PDO('pgsql:dbname=Prog_Web host=localhost','postgres','robinhoussem');
 			}
 			catch (Exception $e)
 			{
