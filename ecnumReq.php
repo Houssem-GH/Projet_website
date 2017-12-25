@@ -12,12 +12,28 @@
 					die('Erreur : ' . $e->getMessage());
 			}
 			$VALEUR= "EC ".$_POST["field1"].".".$_POST["field2"].".".$_POST["field3"].".".$_POST["field4"];
-			$answer = $bdd->query("SELECT * FROM enzyme WHERE enzyme.ec = '$VALEUR'");
-
-			if (!$answer) {
+			
+			if (!preg_match("/^[0-9]+$/",$_POST["field1"]) || 
+				!preg_match("/^[0-9]+$/",$_POST["field2"]) || 
+				!preg_match("/^[0-9]+$/",$_POST["field3"]) || 
+				!preg_match("/^[0-9]+$/",$_POST["field4"]) )
+			{
+				echo "Please enter only number!\n";
+				exit;
+			}
+			$existanceEC = $bdd->query("SELECT ec FROM enzyme WHERE enzyme.ec = '$VALEUR'");
+			$result_existance = $existanceEC->fetch();
+			
+			
+			//~ $result = $answer->fetch();
+			//~ echo $result;
+			if (!$result_existance) {
 			  echo "Ec number don't exist!\n";
 			  exit;
 			}
+			else
+			{
+			$answer = $bdd->query("SELECT * FROM enzyme WHERE enzyme.ec = '$VALEUR'");
 			while ($result = $answer->fetch())
 			{
 		?>
@@ -31,7 +47,8 @@
 			<?php
 			}
 			$answer->closeCursor(); // Termine le traitement de la requête
+			}
+			$existanceEC->closeCursor(); // Termine le traitement de la requête de l'existance
 			?>
 	</body>
 </html>
-
