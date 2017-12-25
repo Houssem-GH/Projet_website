@@ -27,15 +27,26 @@
   <tr>
     <td colspan="3">
       <ul>
-        <li><form method="POST" action="enzyme-search-ec.php"><a href="enzyme-search-ec.php">Recherche par EC number</a>:
+        <li><form method="POST" action="enzyme-search-ec.php"><a>Search by EC number</a>:
               <input name="field1" size="2" maxlength="1">.<input name="field2" size="2" maxlength="2">.<input name="field3" size="2" maxlength="2">.<input name="field4" size="3" maxlength="3">
               <input value="Search" type="submit"><input value="Clear" name="reset" type="reset">
             </form>
+            <br />
+<!--
         </li><li><a href="enzyme-byclass.html">Les classes d'enzymes</a>
-        </li><li><form method="POST" action="/cgi-bin/enzyme/enzyme-search-de"><a href="enzyme-byname.html">par description (nom officiel ou alternatif)</a> <input name="query" size="40"> <input value="Search" type="submit"><input value="Clear" name="reset" type="reset"></form>
-        </li><li><a href="enzyme-bycompound.html">Par composant chimique</a>
-        </li><li><a href="enzyme-bycofactor.html">Par cofacteur</a>
-        </li><li><a href="enzyme-bycomment.html">Recherche dans les commentaires</a>
+-->
+        </li><li><form method="POST" action="description-search.php"><a>Search by descripion </a> 
+        <input name="field_Des" size="40"> <input value="Search" type="submit">
+        <input value="Clear" name="reset" type="reset"></form>
+        <br />
+        </li><li><form method="POST" action="compound-search.php"><a>Search by chemical compounds</a> 
+        <input name="field_chemical" size="40"> <input value="Search" type="submit">
+        <input value="Clear" name="reset" type="reset"></form>
+        <br />
+        </li><li><form method="POST" action="cofactor-search.php"><a>Search by cofactors</a> 
+        <input name="field_cofactor" size="40"> <input value="Search" type="submit">
+        <input value="Clear" name="reset" type="reset"></form>
+        <br />
           <p>
           </p></li></ul>
         </td></tr>

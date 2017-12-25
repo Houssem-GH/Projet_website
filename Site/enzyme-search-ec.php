@@ -48,73 +48,115 @@
 				echo "Please enter only numbers!\n";
 				exit;		
 			}
-			
-		$existanceEC = $bdd->query("SELECT ec FROM enzyme WHERE enzyme.ec = '$VALEUR'");
-		$result_existance = $existanceEC->fetch();
 		
-		if (!$result_existance) 
+		$answerEC = $bdd->query("SELECT * FROM enzyme WHERE enzyme.ec = '$VALEUR'");
+		
+		while ($result = $answerEC->fetch())
+			{
+				$EC = $result['ec'];
+				$Off_Name = $result['official_name'];
+				$Oth_Name = $result['other_name'];
+				$Coef = $result['coefacteur'];
+				$Comm = $result['commentaire'];
+				$Act = $result['activity'];
+			}
+					
+		if (empty($EC)) 
 			{
 				echo "Ec number don't exist!\n";
 				exit;
 			}
 		else
+		{
+	?>			
+			<br />
+			<strong>EC :</strong> <?php echo $EC;?>  
+			<br />
+			<br />
+			<br />
+			<strong>Official Name :</strong> <?php echo $Off_Name;?>
+			<br />
+			<br />
+			<strong>Other Name :</strong> <?php if ($Oth_Name != 'NULL'){echo $Oth_Name;} else {echo "-";}?>
+			<br />
+			<br />
+			<strong>Cofacteur :</strong> <?php if ($Coef != 'NULL'){echo $Coef;} else {echo "-";}?>
+			<br />
+			<br />
+			<strong>Commentary:</strong> <?php if ($Comm != 'NULL'){echo $Comm;} else {echo "-";}?>
+			<br />
+			<br />
+			<strong>Activity :</strong> <?php if ($Act != 'NULL'){echo $Act;} else {echo "-";}?>
+			<br />
+			<br />
+			
+	<?php	
+		}
+			$answerEC->closeCursor(); // Termine le traitement de la requête
+			
+			$answerProsite = $bdd->query("SELECT * FROM prosite WHERE prosite.ec = '$VALEUR'");
+
+			$Arr_id_p = array();
+			
+			while ($result = $answerProsite->fetch())
 			{
-			
-			$answer = $bdd->query("SELECT enzyme.ec, enzyme.official_name, enzyme.other_name, enzyme.coefacteur, enzyme.commentaire, enzyme.activity, 
-			prosite.id_p, swissprot.id_sp, publication.titre, publication.year_pub, publication.auteurs 
-			FROM enzyme, swissprot, prosite, publication WHERE enzyme.ec = '$VALEUR' 
-			and enzyme.ec = prosite.ec and enzyme.ec = swissprot.ec and enzyme.ec = publication.ec");
-
-			while ($result = $answer->fetch())
-				{
-					$EC = $result['ec'];
-					$Off_Name = $result['official_name'];
-					$Oth_Name = $result['other_name'];
-					$Coef = $result['coefacteur'];
-					$Comm = $result['commentaire'];
-					$Act = $result['activity'];
-					
-					$Arr_id_p = array();
-					array_push($Arr_id_p, $result['id_p']);
-					
-					$Arr_id_sp = array();
-					array_push($Arr_id_sp, $result['id_sp']);
-					
-					$Arr_pub_tit = array();
-					array_push($Arr_pub_tit, $result['titre']);
-					
-					$Arr_id_pub_year = array();
-					array_push($Arr_pub_tit, $result['year_pub']);
-					
-					$Arr_pub_auteur = array();	
-					array_push($Arr_pub_auteur, $result['auteurs']);
-				}
-			$answer->closeCursor(); // Termine le traitement de la requête
+				array_push($Arr_id_p, $result['id_p']);
 			}
+	?>					
+			<strong>Prosite Id :</strong> <?php if (!empty($Arr_id_p)){foreach ($Arr_id_p as &$value){echo $value."; ";}} else {echo "-";} ?>
+			<br />
+			<br />
+	<?php
 			
-		$existanceEC->closeCursor(); // Termine le traitement de la requête de l'existance
+			$answerProsite->closeCursor(); // Termine le traitement de la requête
+			
+			$answerSwiss = $bdd->query("SELECT * FROM swissprot WHERE swissprot.ec = '$VALEUR'");
+			
+
+			$Arr_id_sp = array();
+			while ($result = $answerSwiss->fetch())
+			{
+				array_push($Arr_id_sp, $result['id_sp']);
+			}
+	?>					
+			<strong>SwissProt Id :</strong> <?php if (!empty($Arr_id_sp)){foreach ($Arr_id_sp as &$value){echo $value."; ";}} else {echo "-";} ?>
+			<br />
+			<br />
+	<?php
+			$answerSwiss->closeCursor(); // Termine le traitement de la requête
+			
+			$answerPub = $bdd->query("SELECT * FROM publication WHERE publication.ec = '$VALEUR'");			
+			
+			$Arr_pub_tit = array();
+			$Arr_pub_year = array();
+			$Arr_pub_auteur = array();	
+			
+			while ($result = $answerPub->fetch())
+			{			
+				array_push($Arr_pub_auteur, $result['auteurs']);
+				array_push($Arr_pub_year, $result['year_pub']);
+				array_push($Arr_pub_tit, $result['titre']);	
+			}					
 	?>
-					<br />
-					<strong>EC :</strong> <?php echo $EC;?>  
-					<br />
-					<br />
-					<strong>Official Name :</strong> <?php echo $Off_Name;?>
-					<br />
-					<strong>Other Name :</strong> <?php if ($Oth_Name != 'NULL'){echo $Oth_Name;} else {echo "-";}?>
-					<br />
-					<strong>Cofacteur :</strong> <?php if ($Coef != 'NULL'){echo $Coef;} else {echo "-";}?>
-					<br />
-					<strong>Commentary:</strong> <?php if ($Comm != 'NULL'){echo $Comm;} else {echo "-";}?>
-					<br />
-					<strong>Activity :</strong> <?php if ($Act != 'NULL'){echo $Act;} else {echo "-";}?>
-					<br />
-					<strong>Prosite Id :</strong> <?php if (!empty($Arr_id_p)){foreach ($Arr_id_p as &$value){echo $value."; ";}} else {echo "-";} ?>
-					<br />
-					<strong>SwissProt Id :</strong> <?php if (!empty($Arr_id_sp)){foreach ($Arr_id_sp as &$value){echo $value."; ";}} else {echo "-";} ?>
-					<br />
-	
-
-
-
+			<strong>Publications about this enzyme :</strong><br /><br />
+			<?php
+				//~ print_r($Arr_pub_year[0]);
+				//~ $i =0;
+				if (!empty($Arr_pub_tit))
+					{
+						foreach ($Arr_pub_tit as $key=>$value)
+						{
+							echo "Title: ".$value. "<br />";
+							$year = $Arr_pub_year[$key];
+							echo "Year: ".$Arr_pub_year[$key]. "<br />";
+							echo "Authors: ".$Arr_pub_auteur[$key]. "<br />". "<br />";
+							//~ $i++;
+						}
+					} 
+				else 
+				{
+					echo "-";
+				} 
+			?>
   </body>
 </html>
