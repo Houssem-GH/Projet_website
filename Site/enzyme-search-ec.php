@@ -16,14 +16,14 @@
     </figure>
 
     <div id="menu">
-    <ul id="onglets">
-      <li class="active"><a href="Page_principale.html"> Accueil </a></li>
-      <li><a href="Requetes.html"> requêtes </a></li>
-      <li><a href="Visualisation.html"> Visualisation voies métaboliques </a></li>
-      <li><a href="Contacts.html"> Nous contacter </a></li>
-    </ul>
-  </div>
-  
+			<ul id="onglets">
+			  <li><a href="Page_principale.html"> Home </a></li>
+			  <li class="active"><a href="Requetes.html"> About Enzymes </a></li>
+			  <li><a href="Visualisation.html"> Visualize Metabolic Network </a></li>
+			  <li><a href="Contacts.html"> Contact Us </a></li>
+			</ul>
+		</div>
+  <br />
 	<?php
 		try
 		{
@@ -37,7 +37,7 @@
 		
 		if (empty($_POST["field1"]) || empty($_POST["field2"]) || empty($_POST["field3"]) || empty($_POST["field4"]) )
 			{ 
-				echo "Please fill all the input field!\n";
+				echo "Please fill in all the input field!\n";
 				exit;
 			}
 		else if (!preg_match("/^[0-9]+$/",$_POST["field1"]) || 
@@ -59,6 +59,8 @@
 				$Coef = $result['coefacteur'];
 				$Comm = $result['commentaire'];
 				$Act = $result['activity'];
+				$His = $result['history'];
+				$Fun_Name = $result['sys_name'];
 			}
 					
 		if (empty($EC)) 
@@ -68,13 +70,15 @@
 			}
 		else
 		{
-	?>			
-			<br />
+	?>
 			<strong>EC :</strong> <?php echo $EC;?>  
 			<br />
 			<br />
 			<br />
 			<strong>Official Name :</strong> <?php echo $Off_Name;?>
+			<br />
+			<br />
+			<strong>Functional Name :</strong> <?php if ($Fun_Name != 'NULL'){echo $Fun_Name;} else {echo "-";}?>
 			<br />
 			<br />
 			<strong>Other Name :</strong> <?php if ($Oth_Name != 'NULL'){echo $Oth_Name;} else {echo "-";}?>
@@ -87,6 +91,9 @@
 			<br />
 			<br />
 			<strong>Activity :</strong> <?php if ($Act != 'NULL'){echo $Act;} else {echo "-";}?>
+			<br />
+			<br />
+			<strong>History :</strong> <?php if ($His != 'NULL'){echo $His;} else {echo "-";}?>
 			<br />
 			<br />
 			
@@ -140,8 +147,6 @@
 	?>
 			<strong>Publications about this enzyme :</strong><br /><br />
 			<?php
-				//~ print_r($Arr_pub_year[0]);
-				//~ $i =0;
 				if (!empty($Arr_pub_tit))
 					{
 						foreach ($Arr_pub_tit as $key=>$value)
@@ -150,13 +155,13 @@
 							$year = $Arr_pub_year[$key];
 							echo "Year: ".$Arr_pub_year[$key]. "<br />";
 							echo "Authors: ".$Arr_pub_auteur[$key]. "<br />". "<br />";
-							//~ $i++;
 						}
 					} 
 				else 
 				{
 					echo "-";
-				} 
+				}
+			$answerPub->closeCursor(); // Termine le traitement de la requête 
 			?>
   </body>
 </html>

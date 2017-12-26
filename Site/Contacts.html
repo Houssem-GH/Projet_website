@@ -8,64 +8,64 @@
   </head>
 
   <body>
-    <h1>E.see</h1>
-    <figure>
+	<h1>E.see</h1>
+	<figure>
+		<img src="protein-icon_128.png" alt="Logo E.see" />
+	</figure>
 
-      <img src="protein-icon_128.png" alt="Logo E.see" />
+	<div id="menu">
+		<ul id="onglets">
+		  <li><a href="Page_principale.html"> Home </a></li>
+		  <li class="active"><a href="Requetes.html"> About Enzymes </a></li>
+		  <li><a href="Visualisation.html"> Visualize Metabolic Network </a></li>
+		  <li><a href="Contacts.html"> Contact Us </a></li>
+		</ul>
+	</div>
 
-    </figure>
+	  <p align="center"><strong>Contact</strong></p>
+	  <table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+		<form action="envoi.php" method="post" enctype="application/x-www-form-urlencoded" name="formulaire">
+<!--
+		  <tr>
+			<td colspan="3"><strong>Sent Mail</strong></td><br/>
+		  </tr>
+-->
+		  <tr>
+			<td><div align="left">Your Name:</div></td>
+			<td colspan="2"><input type="text" name="nom" size="45" maxlength="100"></td>
+		  </tr>
+		  <tr>
+			<td width="17%"><div align="left">Your email:</div></td>
+			<td colspan="2"><input type="text" name="mail" size="45" maxlength="100"></td>
+		  </tr>
+		  <tr>
+			<td><div align="left">Subject:</div></td>
+			<td colspan="2"><input type="text" name="objet" size="45" maxlength="120"></td>
+		  </tr>
+		  <tr>
+			<td><div align="left">Body:</div></td>
+			<td colspan="2"><textarea name="message" cols="50" rows="10"></textarea></td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td width="42%"><center>
+			  <input type="reset" name="Submit" value="Reset">
+			</center></td>
+			<td width="41%"><center>
+			  <input type="submit" name="Submit" value="Send">
+			</center></td>
+		  </tr>
+		</form>
+	  </table>
 
-    <div id="menu">
-    <ul id="onglets">
-      <li><a href="Page_principale.html"> Accueil </a></li>
-      <li><a href="Requetes.html"> requêtes </a></li>
-      <li><a href="Visualisation.html"> Visualisation voies métaboliques </a></li>
-      <li class="active"><a href="Contacts.html"> Nous contacter </a></li>
-    </ul>
-  </div>
-
-  <p align="center"><strong>Contact</strong></p>
-  <table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
-    <form action="envoi.php" method="post" enctype="application/x-www-form-urlencoded" name="formulaire">
-      <tr>
-        <td colspan="3"><strong>Envoyer un message</strong></td>
-      </tr>
-      <tr>
-        <td><div align="left">Votre nom :</div></td>
-        <td colspan="2"><input type="text" name="nom" size="45" maxlength="100"></td>
-      </tr>
-      <tr>
-        <td width="17%"><div align="left">Votre mail :</div></td>
-        <td colspan="2"><input type="text" name="mail" size="45" maxlength="100"></td>
-      </tr>
-      <tr>
-        <td><div align="left">Sujet : </div></td>
-        <td colspan="2"><input type="text" name="objet" size="45" maxlength="120"></td>
-      </tr>
-      <tr>
-        <td><div align="left">Message : </div></td>
-        <td colspan="2"><textarea name="message" cols="50" rows="10"></textarea></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td width="42%"><center>
-          <input type="reset" name="Submit" value="Réinitialiser le formulaire">
-        </center></td>
-        <td width="41%"><center>
-          <input type="submit" name="Submit" value="Envoyer">
-        </center></td>
-      </tr>
-    </form>
-  </table>
-
-  <!-- ici c'est le bouton tweeter -->
-  <a href="http://twitter.com/share" class="twitter-share-button"
-  data-count="vertical" data-via="InfoWebMaster">Tweet</a>
-  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	  <!-- ici c'est le bouton tweeter -->
+	  <a href="http://twitter.com/share" class="twitter-share-button"
+	  data-count="vertical" data-via="InfoWebMaster">Tweet</a>
+	  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
 
-  <!-- bouton like facebook -->
-  <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.example.com/page.html&layout=box_count&show_faces=true&width=65&action=like&font=arial&colorscheme=light&height=65"
-  scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; height:65px; margin-top:3px;" allowTransparency="true"></iframe>
-
+	  <!-- bouton like facebook -->
+	  <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.example.com/page.html&layout=box_count&show_faces=true&width=65&action=like&font=arial&colorscheme=light&height=65"
+	  scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; height:65px; margin-top:3px;" allowTransparency="true"></iframe>
+	</body>
 </html>

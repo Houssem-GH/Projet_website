@@ -87,7 +87,7 @@ for line in f_lines1:
 		PROSITE= f_lines1[Num_ligne+1].split(';')
 	
 	if line == 	'/SWISSPROT':
-		f_enzyme.write("INSERT INTO enzyme VALUES ( '"+EC+"','"+S_NAME+"','"+O_NAME+"','"+COFACTORS+"','"+COMMENTS+"','"+ACTIVITY+"');\n")
+		f_enzyme.write("INSERT INTO enzyme VALUES ( '"+EC+"','"+S_NAME+"','"+O_NAME+"','"+COFACTORS+"','"+COMMENTS+"','"+ACTIVITY+"', 'NULL', 'NULL');\n")
 		
 		if SWISSPROT:
 			for cle in SWISSPROT[:5]:
@@ -107,8 +107,25 @@ f_in1.close()
 # lecture du fichier2.txt
 Num_ligne=0
 for line in f_lines2:
+	
 	if line == 'ec':
 		ec = f_lines2[Num_ligne+1]
+	
+	if line == 'systematic_name':
+		#~ if f_lines2[Num_ligne+1] != '':
+		Sys_Name = f_lines2[Num_ligne+1]
+		Sys_Name = Sys_Name.replace("\'","")
+		if Sys_Name == '-':
+			Sys_Name = 'NULL'
+		f_enzyme.write("UPDATE enzyme SET sys_name = '"+Sys_Name+"' WHERE ec = '"+ec+"';\n")
+	
+	if line == 'history':
+		HIS = f_lines2[Num_ligne+1]
+		HIS = HIS.replace("\'","")
+		if HIS == '':
+			HIS = 'NULL'
+		f_enzyme.write("UPDATE enzyme SET history = '"+HIS+"' WHERE ec = '"+ec+"';\n")
+	
 	
 	if line == 'authors':
 		AUTEURS = f_lines2[Num_ligne+1]
@@ -122,8 +139,9 @@ for line in f_lines2:
 		YEAR = f_lines2[Num_ligne+1]
 		YEAR = YEAR.replace("\'","")
 		f_Pub.write("INSERT INTO publication VALUES ( '"+TITLE+"','"+YEAR+"','"+ec+"','"+AUTEURS+"');\n")
-	
+		
 	
 	Num_ligne += 1
 	
 f_in2.close()
+
