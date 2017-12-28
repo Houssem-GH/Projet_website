@@ -66,7 +66,8 @@
 				foreach ($Arr_EC as $key=>$value)
 				{
 					$num = $key+1;
-					echo "* <strong> Enzyme ".$num.": </strong> ".$value." -> Name: ".$Arr_Name[$key]."<br />";
+					echo "* <strong> Enzyme ".$num.": </strong> ".$value."<br />";
+					echo "-> Name: ".$Arr_Name[$key]."<br /><br />";
 				}
 
 			}

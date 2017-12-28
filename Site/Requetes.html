@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="Style.css" />
 		<link rel="icon" type="image/png" href="protein-icon.png" />
-		<title>E.see</title>
+		<title>About Enzymes</title>
     </head>
 
 	<body>
@@ -26,9 +26,12 @@
 			<td colspan="3">
 				<ul>
 					<li><form method="POST" action="enzyme-search-ec.php"><a>Search by EC number</a>:
-						  <input name="field1" size="2" maxlength="1">.<input name="field2" size="2" maxlength="2">.
-						  <input name="field3" size="2" maxlength="2">.<input name="field4" size="3" maxlength="3">
-						  <input value="Search" type="submit"><input value="Clear" name="reset" type="reset">
+						  <input name="field1" size="3" maxlength="1">
+						  <input name="field2" size="3" maxlength="2">
+						  <input name="field3" size="3" maxlength="2">
+						  <input name="field4" size="3" maxlength="3">
+						  <input value="Search" type="submit">
+						  <input value="Clear" name="reset" type="reset">
 						</form>
 						<br />
 					</li>
@@ -63,6 +66,10 @@
 			</td>
 		</tr>
 
+<form method=POST action=ta_page.php>
+   <input type="hidden" name="var1" value="<?php echo "".$var1."" ?>"></input>
+   <input type="hidden" name="var2" value="<?php echo "".$var2."" ?>"></input>
+</form>
 
 
 	</body>

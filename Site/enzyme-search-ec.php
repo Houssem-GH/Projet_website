@@ -42,8 +42,7 @@
 			}
 		else if (!preg_match("/^[0-9]+$/",$_POST["field1"]) || 
 			!preg_match("/^[0-9]+$/",$_POST["field2"]) || 
-			!preg_match("/^[0-9]+$/",$_POST["field3"]) || 
-			!preg_match("/^[0-9]+$/",$_POST["field4"]) )
+			!preg_match("/^[0-9]+$/",$_POST["field3"])  )
 			{
 				echo "Please enter only numbers!\n";
 				exit;		
@@ -65,7 +64,7 @@
 					
 		if (empty($EC)) 
 			{
-				echo "Ec number don't exist!\n";
+				echo $VALEUR.": Ec number don't exist!\n";
 				exit;
 			}
 		else
