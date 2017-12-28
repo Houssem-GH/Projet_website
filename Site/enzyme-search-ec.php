@@ -150,7 +150,7 @@
 					{
 						foreach ($Arr_pub_tit as $key=>$value)
 						{
-							echo "Title: ".$value. "<br />";
+							echo "* Title: ".$value. "<br />";
 							$year = $Arr_pub_year[$key];
 							echo "Year: ".$Arr_pub_year[$key]. "<br />";
 							echo "Authors: ".$Arr_pub_auteur[$key]. "<br />". "<br />";
