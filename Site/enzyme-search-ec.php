@@ -33,23 +33,44 @@
 		{
 				die('Erreur : ' . $e->getMessage());
 		}
-		$VALEUR= "EC ".$_POST["field1"].".".$_POST["field2"].".".$_POST["field3"].".".$_POST["field4"];
 		
-		if (empty($_POST["field1"]) || empty($_POST["field2"]) || empty($_POST["field3"]) || empty($_POST["field4"]) )
-			{ 
-				echo "Please fill in all the input field!\n";
-				exit;
-			}
-		else if (!preg_match("/^[0-9]+$/",$_POST["field1"]) || 
-			!preg_match("/^[0-9]+$/",$_POST["field2"]) || 
-			!preg_match("/^[0-9]+$/",$_POST["field3"])  )
-			{
-				echo "Please enter only numbers!\n";
-				exit;		
-			}
-		
+		if ( empty($_POST["Var-Vers-Enzyme"]) )
+		{
+			$VALEUR= "EC ".$_POST["field1"].".".$_POST["field2"].".".$_POST["field3"].".".$_POST["field4"];
+			
+			if (empty($_POST["field1"]) || empty($_POST["field2"]) || empty($_POST["field3"]) || empty($_POST["field4"]) )
+				{ 
+					echo "Please fill in all the input field!\n";
+					?>
+					<br />
+					<br />
+					<form method="POST" action="Requetes.html">
+						<input value="Try again" type="submit"></input>
+					</form>
+					<?php
+					exit;
+				}
+			else if (!preg_match("/^[0-9]+$/",$_POST["field1"]) || 
+				!preg_match("/^[0-9]+$/",$_POST["field2"]) || 
+				!preg_match("/^[0-9]+$/",$_POST["field3"])  )
+				{
+					echo "Please enter only numbers!\n";
+					?>
+					<br />
+					<br />
+					<form method="POST" action="Requetes.html">
+						<input value="Try again" type="submit"></input>
+					</form>
+					<?php
+					exit;		
+				}
+		}
+		else 
+		{
+			$VALEUR= $_POST["Var-Vers-Enzyme"];
+		}
+			
 		$answerEC = $bdd->query("SELECT * FROM enzyme WHERE enzyme.ec = '$VALEUR'");
-		
 		while ($result = $answerEC->fetch())
 			{
 				$EC = $result['ec'];
@@ -65,6 +86,13 @@
 		if (empty($EC)) 
 			{
 				echo $VALEUR.": Ec number don't exist!\n";
+					?>
+					<br />
+					<br />
+					<form method="POST" action="Requetes.html">
+						<input value="Try again" type="submit"></input>
+					</form>
+					<?php
 				exit;
 			}
 		else
@@ -125,9 +153,9 @@
 				array_push($Arr_id_sp, $result['id_sp']);
 			}
 	?>					
-			<strong>SwissProt Id :</strong> <?php if (!empty($Arr_id_sp)){foreach ($Arr_id_sp as &$value){echo $value."; ";}} else {echo "-";} ?>
+			<strong>SwissProt Id :</strong> <?php if (!empty($Arr_id_sp)){foreach ($Arr_id_sp as &$value){echo $value.", ";}} else {echo "-";} ?>
 			<br />
-			<br />
+			<br /,
 	<?php
 			$answerSwiss->closeCursor(); // Termine le traitement de la requête
 			

@@ -66,7 +66,14 @@
 				{
 					$num = $key+1;
 					echo "* <strong> Enzyme ".$num.": </strong> ".$value."<br />";
-					echo "-> Name: ".$Arr_Name[$key]."<br /><br />";
+					echo "-> Name: ".$Arr_Name[$key];
+					
+					?>
+					<form method="POST" action="enzyme-search-ec.php" target="_BLANK">
+						<input type="hidden" name="Var-Vers-Enzyme" value="<?php echo $value ?>"></input>
+						<input value="E.see this enzyme" type="submit"></input>
+					</form>
+					<?php
 				}
 
 			}
