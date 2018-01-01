@@ -4,11 +4,14 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="Style.css" />
 		<link rel="icon" type="image/png" href="images/protein-icon.png" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+
 		<title>Hydro Enzymes</title>
     </head>
 
 	<body>
 		<h1>E.see</h1>
+		<script type="text/javascript"> $(document).ready(function(){ $('.top').click(function(){ $('html,body').animate({scrollTop: 0},'slow'); }); }); </script>
 		<figure>
 			<img src="images/protein-icon_128.png" alt="Logo E.see" />
 		</figure>
@@ -67,6 +70,6 @@
 				}
 			}
 	?>
-
+	<a href="#"><img src="images/fleche.png" class="top" align="right" title="Retour en haut"/></a>
   </body>
 </html>

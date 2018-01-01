@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="Style.css" />
     <link rel="icon" type="image/png" href="images/protein-icon.png" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
     <title>Result Query on Description</title>
   </head>
 
   <body>
     <h1>E.see</h1>
+    <script type="text/javascript"> $(document).ready(function(){ $('.top').click(function(){ $('html,body').animate({scrollTop: 0},'slow'); }); }); </script>
     <figure>
 
       <img src="images/protein-icon_128.png" alt="Logo E.see" />
@@ -39,6 +41,13 @@
 		if (empty($_POST["field_Des"]))
 		{
 			echo "Please fill in the descreption field first!";
+			?>
+			<br />
+			<br />
+			<form method="POST" action="Requetes.html">
+				<input value="Try again" type="submit"></input>
+			</form>
+			<?php
 			exit;
 		}
 		
@@ -59,6 +68,13 @@
 		if (empty($Arr_EC))
 			{
 				echo "there is no enzyme related to: \"".$VALEUR."\"";
+				?>
+				<br />
+				<br />
+				<form method="POST" action="Requetes.html">
+					<input value="Try again" type="submit"></input>
+				</form>
+				<?php
 			}
 		else
 			{	
@@ -75,11 +91,13 @@
 					</form>
 					<?php
 				}
+				?>
+				<a href="#"><img src="images/fleche.png" align="right" class="top" title="Retour en haut"/></a>
+				<?php
 
 			}
 		$answerDES->closeCursor(); // Termine le traitement de la requête
 	?>
-
 	</body>
 </html>
 
