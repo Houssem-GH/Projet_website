@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="Style.css" />
-    <link rel="icon" type="image/png" href="protein-icon.png" />
+    <link rel="icon" type="image/png" href="images/protein-icon.png" />
     <title>Result Query on Ec number</title>
   </head>
 
@@ -11,7 +11,7 @@
     <h1>E.see</h1>
     <figure>
 
-      <img src="protein-icon_128.png" alt="Logo E.see" />
+      <img src="images/protein-icon_128.png" alt="Logo E.see" />
 
     </figure>
 

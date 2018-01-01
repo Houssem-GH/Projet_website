@@ -1,19 +1,17 @@
-<!DOCTYPE hmtl>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="Style.css" />
-    <link rel="icon" type="image/png" href="images/protein-icon.png" />
-    <title>Result Query on Cofactors</title>
-  </head>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="Style.css" />
+		<link rel="icon" type="image/png" href="images/protein-icon.png" />
+		<title>Lig Enzymes</title>
+    </head>
 
-  <body>
-    <h1>E.see</h1>
-    <figure>
-
-      <img src="images/protein-icon_128.png" alt="Logo E.see" />
-
-    </figure>
+	<body>
+		<h1>E.see</h1>
+		<figure>
+			<img src="images/protein-icon_128.png" alt="Logo E.see" />
+		</figure>
 
 		<div id="menu">
 			<ul id="onglets">
@@ -23,7 +21,7 @@
 			  <li><a href="Contacts.html"> Contact Us </a></li>
 			</ul>
 		</div>
-  <br />
+		<br />
 	<?php
 		try
 		{
@@ -34,38 +32,29 @@
 				die('Erreur : ' . $e->getMessage());
 		}
 		
-		$VALEUR = strtolower($_POST["field_cofactor"]);
-		
-		if (empty($_POST["field_cofactor"]))
-		{
-			echo "Please fill in the research field first!";
-			exit;
-		}
-		
-		$answerCOF = $bdd->query("SELECT ec, official_name 
+		$answer = $bdd->query("SELECT ec, official_name 
 								FROM enzyme 
-								WHERE LOWER(enzyme.coefacteur) LIKE '%$VALEUR%'");
+								WHERE LOWER(enzyme.ec) LIKE 'ec 6.%'");
+		
 		$Arr_EC = array();
 		$Arr_Name = array();
-		while ($result = $answerCOF->fetch())
+		while ($result = $answer->fetch())
 			{
 				array_push($Arr_EC, $result['ec']);
 				array_push($Arr_Name, $result['official_name']);
 			}
 		
-		echo "Number of matches: " .count($Arr_EC)."<br /><br />";
-		
 		if (empty($Arr_EC))
 			{
-				echo "there is no enzyme using \"".$VALEUR."\" as cofactor";
+				echo "there is no enzymes in this class";
 			}
 		else
-			{
-				echo "<strong>List of enzymes using: \"".$VALEUR."\" as cofactor</strong><br /><br />";				
+			{			
+				echo "<strong>Ligase enzymes:</strong>"."<br />"."<br />";
 				foreach ($Arr_EC as $key=>$value)
 				{
 					$num = $key+1;
-					echo "* <strong> Enzyme ".$num.": </strong> ".$value."<br />";
+					echo "* <strong> Enzyme ".$num.": </strong> ".$value;
 					echo "-> Name: ".$Arr_Name[$key];
 					
 					?>
@@ -73,12 +62,11 @@
 						<input type="hidden" name="Var-Vers-Enzyme" value="<?php echo $value ?>"></input>
 						<input value="E.see this enzyme" type="submit"></input>
 					</form>
+					<br /><br />
 					<?php
 				}
-
 			}
-		$answerCOF->closeCursor(); // Termine le traitement de la requête
 	?>
 
-	</body>
+  </body>
 </html>
