@@ -16,14 +16,14 @@
 			<img src="images/protein-icon_128.png" alt="Logo E.see" />
 		</figure>
 
-		<div id="menu">
-			<ul id="onglets">
-			  <li><a href="Page_principale.html"> Home </a></li>
-			  <li class="active"><a href="Requetes.html"> About Enzymes </a></li>
-			  <li><a href="Visualisation.html"> Visualize Metabolic Network </a></li>
-			  <li><a href="Contacts.html"> Contact Us </a></li>
-			</ul>
-		</div>
+	<div id="menu">
+		<ul id="onglets">
+		  <li id = "onglets_li"><a href="Page_principale.html"> Home </a></li>
+		  <li id = "onglets_li" class="active"><a href="Requetes.html"> About Enzymes </a></li>
+		  <li id = "onglets_li"><a href="Visualisation.html"> Visualize Metabolic Network </a></li>
+		  <li id = "onglets_li" style="float:right"><a href="Contacts.html"> Contact </a></li>
+		</ul>
+	</div>
 		<br />
 	<?php
 		try

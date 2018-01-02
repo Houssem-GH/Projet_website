@@ -4,25 +4,23 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="Style.css" />
     <link rel="icon" type="image/png" href="images/protein-icon.png" />
-    <title>Result Query on Ec number</title>
+    <title>Home E.see</title>
   </head>
 
   <body>
-    <h1>E.see</h1>
-    <figure>
+	<h1>E.see</h1>
+	<figure>
+		<img src="images/protein-icon_128.png" alt="Logo E.see" />
+	</figure>
 
-      <img src="images/protein-icon_128.png" alt="Logo E.see" />
-
-    </figure>
-
-    <div id="menu">
-			<ul id="onglets">
-			  <li><a href="Page_principale.html"> Home </a></li>
-			  <li class="active"><a href="Requetes.html"> About Enzymes </a></li>
-			  <li><a href="Visualisation.html"> Visualize Metabolic Network </a></li>
-			  <li><a href="Contacts.html"> Contact Us </a></li>
-			</ul>
-		</div>
+	<div id="menu">
+		<ul id="onglets">
+		  <li id = "onglets_li"><a href="Page_principale.html"> Home </a></li>
+		  <li id = "onglets_li" class="active"><a href="Requetes.html"> About Enzymes </a></li>
+		  <li id = "onglets_li"><a href="Visualisation.html"> Visualize Metabolic Network </a></li>
+		  <li id = "onglets_li" style="float:right"><a href="Contacts.html"> Contact </a></li>
+		</ul>
+	</div>
   <br />
 	<?php
 		try

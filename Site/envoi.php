@@ -1,27 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="icon" type="image/png" href="images/protein-icon.png" />
+    <title>Contact Us</title>
+  </head>
+
+  <body>
+	<h1>E.see</h1>
+	<figure>
+		<img src="images/protein-icon_128.png" alt="Logo E.see" />
+	</figure>
+
+	<div id="menu">
+		<ul id="onglets">
+		  <li><a href="Page_principale.html"> Home </a></li>
+		  <li><a href="Requetes.html"> About Enzymes </a></li>
+		  <li><a href="Visualisation.html"> Visualize Metabolic Network </a></li>
+		  <li class="active"><a href="Contacts.html"> Contact Us </a></li>
+		</ul>
+	</div>
+
+
 <?php
-$nom=$HTTP_POST_VARS['nom'];
-$mail=$HTTP_POST_VARS['mail'];
-$objet=$HTTP_POST_VARS['objet'];
-$message=$HTTP_POST_VARS['message'];
-
-/////voici la version Mine
-$headers = "MIME-Version: 1.0\r\n";
-
-//////ici on détermine le mail en format text
-$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+$nom=$_POST['nom'];
+$mail=$_POST['mail'];
+$objet=$_POST['objet'];
+$message=$_POST['message'];
+$destinataire="e.see.gd@gmail.com";
 
 ////ici on détermine l'expediteur et l'adresse de réponse
-$headers .= "From: $nom <$mail>\r\nReply-to : $nom <$mail>\nX-Mailer:PHP";
+$headers = "From: <".$mail.">" . "\r\n";
 
-$subject="$objet";
-$destinataire="e.see.gd@gmail.com"; 
-$body="$message";
-if (mail($destinataire,$subject,$body,$headers)) {
-echo "Votre mail a été envoyé<br>";
-} else {
-echo "Une erreur s'est produite";
+if (mail($destinataire,$objet,$message)) 
+{
+	mail($destinataire,$objet,$message);
+	?>
+	<br/><p align="center"> Your email was sent, thank you <br/><br/> </p>
+	<?php
+} 
+else
+{
+	?>
+	<br/><p align="center"> Error in mail sending <br/><br/> </p>
+	<?php
 }
-?></p>
-<p align="center">Vous allez bientot etre redirigé vers la page d'acceuil<br>
-Si vous n'etes pas redirigé au bout de 5 secondes cliquez <a href="Page_principale.html">ici
-</a></p>
+?>
+
+</p>
+<p align="center">
+	<a href="Page_principale.html">Go to home page</a>
+</p>

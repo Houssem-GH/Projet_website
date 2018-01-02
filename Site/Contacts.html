@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="Style.css" />
     <link rel="icon" type="image/png" href="images/protein-icon.png" />
-    <title>Contact Us</title>
+    <title>Contact</title>
   </head>
 
   <body>
@@ -15,21 +15,17 @@
 
 	<div id="menu">
 		<ul id="onglets">
-		  <li><a href="Page_principale.html"> Home </a></li>
-		  <li class="active"><a href="Requetes.html"> About Enzymes </a></li>
-		  <li><a href="Visualisation.html"> Visualize Metabolic Network </a></li>
-		  <li><a href="Contacts.html"> Contact Us </a></li>
+		  <li id = "onglets_li"><a href="Page_principale.html"> Home </a></li>
+		  <li id = "onglets_li"><a href="Requetes.html"> About Enzymes </a></li>
+		  <li id = "onglets_li"><a href="Visualisation.html"> Visualize Metabolic Network </a></li>
+		  <li id = "onglets_li" style="float:right" class="active"><a href="Contacts.html"> Contact </a></li>
 		</ul>
 	</div>
 
 	  <p align="center"><strong>Contact</strong></p>
 	  <table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
-		<form action="envoi.php" method="post" enctype="application/x-www-form-urlencoded" name="formulaire">
-<!--
-		  <tr>
-			<td colspan="3"><strong>Sent Mail</strong></td><br/>
-		  </tr>
--->
+		<form action="envoi.php" method="POST" name="formulaire">
+
 		  <tr>
 			<td><div align="left">Your Name:</div></td>
 			<td colspan="2"><input type="text" name="nom" size="45" maxlength="100"></td>
