@@ -92,13 +92,18 @@
 					foreach ($Arr_EC as $key=>$value)
 					{
 						$num = $key+1;
-						echo "* <strong> Enzyme ".$num.": </strong>".$value."<br />";
-						echo "-> Name: ".$Arr_Name[$key];
 		?>
+						<div >
 						<form method="POST" action="enzyme-search-ec.php" target="_BLANK">
-							<input type="hidden" name="Var-Vers-Enzyme" value="<?php echo $value ?>"></input>
-							<input value="E.see this enzyme" type="submit"></input>
+							<strong> Enzyme <?php echo $num; ?>: </strong>
+							<input type="txt" readonly="readonly" id = "enzyme_bouton" size = "9" name="Var-Vers-Enzyme" value="<?php echo $value; ?>"></input>
+							<input value="E.see this enzyme" type="submit"></input><br/>
+							<div id = "Name_Enzyme"><?php echo "=> Name: ".$Arr_Name[$key]; ?></div>
+							<br/>
+							<br/>
+							<br/>
 						</form>
+						</div>
 		<?php
 					}
 					if ($num >20)

@@ -1,29 +1,37 @@
 h1,h2,h3
 {
-  text-align: center;
+	text-align: center;
 }
+
 
 body
 {
-  color:white;
-  background-color:white;
-  background-image:url(images/fond.png);
-  background-attachment:fixed;
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */
-
+	color:white;
+	background-color:white;
+	background-image:url(images/fond.png);
+	background-attachment:fixed;
+	-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+	background-size: cover; /* version standardisée */
 }
 
+
+/*couleur lien*/
 a
 {
 	color:white;  
 }
 
+
+
+/*position logo*/
 #logo
 {
 	text-align: center;
 }
 
+
+
+/*menu du site*/
 #onglets 
 {
     list-style-type: none;
@@ -55,4 +63,55 @@ a
 .active 
 {
     background-color: #87CEEB;
+}
+
+
+
+/*poisitionner le video et le txt*/
+#conteneur_txt_video
+{
+	display:inline-table;
+}
+#video
+{
+	display:table-cell;
+	float: right;
+}
+#txt_home
+{
+	display:table-cell;
+	float: left;
+	margin-bottom: 8cm;
+}
+#sub_text_home
+{
+    float: left;
+    text-align: justify;
+    text-justify: inter-word;
+    Line-Height: 1.5;
+}
+#trait_home
+{
+	float: left;
+	height: 3px; 
+	color: #839D2D; 
+	width: 22%;
+}
+
+
+
+#enzyme_bouton
+{
+	background-color:transparent;
+	border:none;
+	color:white;
+	text-align: center;
+	font-size: 50 px;
+	font-weight: bold;
+}
+
+#Name_Enzyme
+{
+	display:inline-table;
+	margin-top: 0.3cm;
 }
