@@ -1,125 +1,135 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="Style.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="Style.css">
 		<link rel="icon" type="image/png" href="images/protein-icon.png" />
 		<title>About Enzymes</title>
     </head>
 
 	<body>
+		
 		<h1>E.see</h1>
-		<figure>
+		
+		<div id = "logo">
 			<img src="images/protein-icon_128.png" alt="Logo E.see" />
-		</figure>
+		</div>
+		
+		<div id="menu">
+			<ul id="onglets">
+				<li id = "onglets_li">
+					<a href="Page_principale.html"> Home </a>
+				</li>
+				<li id = "onglets_li" class="active">
+					<a href="Requetes.html"> About Enzymes </a>
+				</li>
+				<li id = "onglets_li">
+					<a href="Visualisation.html"> Visualize Metabolic Network </a>
+				</li>
+				<li id = "onglets_li" style="float:right">
+					<a href="Contacts.html"> Contact </a>
+				</li>
+			</ul>
+		</div>
+		
+		<ul>
+			<li><form method="POST" action="enzyme-search-ec.php"><a><b>Search by EC number</b></a>:
+				  <input name="field1" size="3" maxlength="1">
+				  <input name="field2" size="3" maxlength="2">
+				  <input name="field3" size="3" maxlength="2">
+				  <input name="field4" size="3" maxlength="3">
+				  <input value="Search" type="submit">
+				  <input value="Clear" name="reset" type="reset">
+				</form>
+				<br />
+				<br />
+			</li>
 
-	<div id="menu">
-		<ul id="onglets">
-		  <li id = "onglets_li"><a href="Page_principale.html"> Home </a></li>
-		  <li id = "onglets_li" class="active"><a href="Requetes.html"> About Enzymes </a></li>
-		  <li id = "onglets_li"><a href="Visualisation.html"> Visualize Metabolic Network </a></li>
-		  <li id = "onglets_li" style="float:right"><a href="Contacts.html"> Contact </a></li>
-		</ul>
-	</div>
-
-		<tr>
-			<td colspan="3">
-				<ul>
-					<li><form method="POST" action="enzyme-search-ec.php"><a><b>Search by EC number</b></a>:
-						  <input name="field1" size="3" maxlength="1">
-						  <input name="field2" size="3" maxlength="2">
-						  <input name="field3" size="3" maxlength="2">
-						  <input name="field4" size="3" maxlength="3">
-						  <input value="Search" type="submit">
-						  <input value="Clear" name="reset" type="reset">
-						</form>
-						<br />
-					</li>
-
-					<li><form method="POST" action="description-search.php"><a><b>Search by key words</b></a> 
-							<input name="field_Des" size="40"> <input value="Search" type="submit">
-							<input value="Clear" name="reset" type="reset">
-						</form>
-						<br />
-					</li>
-										
-					<li><form method="POST" action="cofactor-search.php"><a><b>Search by cofactors</b></a> 
-							<select name="field_cofactor">
-								<option value="5,10-methenyltetrahydrofolate">5,10-methenyltetrahydrofolate</option>
-								<option value="5,6,7,8-tetrahydrobiopterin">5,6,7,8-tetrahydrobiopterin</option>
-								<option value="5,6,7,8-tetrahydropteridine">5,6,7,8-tetrahydropteridine</option>
-								<option value="Alamin">Alamin</option>
-								<option value="Ascorbate">Ascorbate</option>
-								<option value="Biotin">Biotin</option>
-								<option value="coA">coA</option>
-								<option value="Cobalt">Cobalt</option>
-								<option value="Coenzyme F430">Coenzyme F430</option>
-								<option value="Copper">Copper</option>
-								<option value="Divalent cation">Divalent cation</option>
-								<option value="Divalent metal cation">Divalent metal cation</option>
-								<option value="FAD">FAD</option>
-								<option value="FADH">FADH</option>
-								<option value="Iron">Iron</option>
-								<option value="Fe(2+)">Fe(2+)</option>
-								<option value="Fe(3+)">Fe(3+)</option>
-								<option value="Ferriheme b">Ferriheme b</option>
-								<option value="Flavin">Flavin</option>
-								<option value="Flavoprotein">Flavoprotein</option>
-								<option value="FMN">FMN</option>
-								<option value="FMNH">FMNH</option>
-								<option value="Glutathione">Glutathione</option>
-								<option value="Heme">Heme</option>
-								<option value="Heme b">Heme b</option>
-								<option value="Heme c">Heme c</option>
-								<option value="Heme-thiolate">Heme-thiolate</option>
-								<option value="Iron-sulfur">Iron-sulfur</option>
-								<option value="Potassium">Potassium</option>
-								<option value="L-ascorbate">L-ascorbate</option>
-								<option value="Metal ions">Metal ions</option>
-								<option value="Cobalamin">Cobalamin</option>
-								<option value="Magnesium">Magnesium</option>
-								<option value="MIO">MIO</option>
-								<option value="Manganese">Manganese</option>
-								<option value="molybdopterin guanine dinucleotide">molybdopterin guanine dinucleotide</option>
-								<option value="molybdopterin">molybdopterin</option>
-								<option value="Molybdenum">Molybdenum</option>
-								<option value="Molybdopterin cytosine dinucleotide">Molybdopterin cytosine dinucleotide</option>
-								<option value="Monovalent cation">Monovalent cation</option>
-								<option value="Sodium">Sodium</option>
-								<option value="NAD(+)">NAD(+)</option>
-								<option value="NADH">NADH</option>
-								<option value="NADP(+)">NADP(+)</option>
-								<option value="NADPH">NADPH</option>
-								<option value="NH(4)(+)">NH(4)(+)</option>
-								<option value="Nickel">Nickel</option>
-								<option value="Pyridoxal 5-phosphate">Pyridoxal 5-phosphate</option>
-								<option value="Pyrroloquinoline quinone">Pyrroloquinoline quinone</option>
-								<option value="Pyruvate">Pyruvate</option>
-								<option value="Riboflavin">Riboflavin</option>
-								<option value="S-adenosyl-L-methionine">S-adenosyl-L-methionine</option>
-								<option value="Selenium">Selenium</option>
-								<option value="Siroheme">Siroheme</option>
-								<option value="Thiamine diphosphate">Thiamine diphosphate</option>
-								<option value="Thiamine phosphate">Thiamine phosphate</option>
-								<option value="Tryptophan tryptophylquinone">Tryptophan tryptophylquinone</option>
-								<option value="Vanadium">Vanadium</option>
-								<option value="Tungsten">Tungsten</option>
-								<option value="Zinc">Zinc</option>
-							</select>
-								<input value="Search" type="submit">
-							<input value="Clear" name="reset" type="reset">
-						</form>
-						<br />
-					</li>
-					
-					<li><form method="POST" action="enzyme-byclass.html">
-						<a href="enzyme-byclass.html" style="text-decoration:none"><b>Enzymes classes</b></a>
-						<input value="E.see" type="submit"></form>
-					</li>
+			<li><form method="POST" action="description-search.php"><a><b>Search by key words</b></a> 
+					<input name="field_Des" size="40"> <input value="Search" type="submit">
+					<input value="Clear" name="reset" type="reset">
+				</form>
+				<br />
+				<br />
+			</li>
+								
+			<li><form method="POST" action="cofactor-search.php"><a><b>Search by cofactors</b></a> 
+					<select name="field_cofactor">
+						<option value="5,10-methenyltetrahydrofolate">5,10-methenyltetrahydrofolate</option>
+						<option value="5,6,7,8-tetrahydrobiopterin">5,6,7,8-tetrahydrobiopterin</option>
+						<option value="5,6,7,8-tetrahydropteridine">5,6,7,8-tetrahydropteridine</option>
+						<option value="Alamin">Alamin</option>
+						<option value="Ascorbate">Ascorbate</option>
+						<option value="Biotin">Biotin</option>
+						<option value="coA">coA</option>
+						<option value="Cobalt">Cobalt</option>
+						<option value="Coenzyme F430">Coenzyme F430</option>
+						<option value="Copper">Copper</option>
+						<option value="Divalent cation">Divalent cation</option>
+						<option value="Divalent metal cation">Divalent metal cation</option>
+						<option value="FAD">FAD</option>
+						<option value="FADH">FADH</option>
+						<option value="Iron">Iron</option>
+						<option value="Fe(2+)">Fe(2+)</option>
+						<option value="Fe(3+)">Fe(3+)</option>
+						<option value="Ferriheme b">Ferriheme b</option>
+						<option value="Flavin">Flavin</option>
+						<option value="Flavoprotein">Flavoprotein</option>
+						<option value="FMN">FMN</option>
+						<option value="FMNH">FMNH</option>
+						<option value="Glutathione">Glutathione</option>
+						<option value="Heme">Heme</option>
+						<option value="Heme b">Heme b</option>
+						<option value="Heme c">Heme c</option>
+						<option value="Heme-thiolate">Heme-thiolate</option>
+						<option value="Iron-sulfur">Iron-sulfur</option>
+						<option value="Potassium">Potassium</option>
+						<option value="L-ascorbate">L-ascorbate</option>
+						<option value="Metal ions">Metal ions</option>
+						<option value="Cobalamin">Cobalamin</option>
+						<option value="Magnesium">Magnesium</option>
+						<option value="MIO">MIO</option>
+						<option value="Manganese">Manganese</option>
+						<option value="molybdopterin guanine dinucleotide">molybdopterin guanine dinucleotide</option>
+						<option value="molybdopterin">molybdopterin</option>
+						<option value="Molybdenum">Molybdenum</option>
+						<option value="Molybdopterin cytosine dinucleotide">Molybdopterin cytosine dinucleotide</option>
+						<option value="Monovalent cation">Monovalent cation</option>
+						<option value="Sodium">Sodium</option>
+						<option value="NAD(+)">NAD(+)</option>
+						<option value="NADH">NADH</option>
+						<option value="NADP(+)">NADP(+)</option>
+						<option value="NADPH">NADPH</option>
+						<option value="NH(4)(+)">NH(4)(+)</option>
+						<option value="Nickel">Nickel</option>
+						<option value="Pyridoxal 5-phosphate">Pyridoxal 5-phosphate</option>
+						<option value="Pyrroloquinoline quinone">Pyrroloquinoline quinone</option>
+						<option value="Pyruvate">Pyruvate</option>
+						<option value="Riboflavin">Riboflavin</option>
+						<option value="S-adenosyl-L-methionine">S-adenosyl-L-methionine</option>
+						<option value="Selenium">Selenium</option>
+						<option value="Siroheme">Siroheme</option>
+						<option value="Thiamine diphosphate">Thiamine diphosphate</option>
+						<option value="Thiamine phosphate">Thiamine phosphate</option>
+						<option value="Tryptophan tryptophylquinone">Tryptophan tryptophylquinone</option>
+						<option value="Vanadium">Vanadium</option>
+						<option value="Tungsten">Tungsten</option>
+						<option value="Zinc">Zinc</option>
+					</select>
+						<input value="Search" type="submit">
+				</form>
+				<br />
+				<br />
+			</li>
 			
-				</ul>
-			</td>
-		</tr>
+			<li><form method="POST" action="enzyme-byclass.html">
+				<a href="enzyme-byclass.html" style="text-decoration:none"><b>Enzymes classes</b></a>
+				<input value="E.see" type="submit">
+				</form>
+				<br />
+				<br />
+			</li>
+		</ul>
 		
 	</body>
 </html>
