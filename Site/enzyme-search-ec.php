@@ -106,7 +106,7 @@
 			else
 			{
 		?>
-				<strong>EC :</strong> <?php echo $EC;?>  
+				<strong>Entry: </strong> <?php echo $EC;?>  
 				<br />
 				<br />
 				<br />
