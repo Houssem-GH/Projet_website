@@ -9,12 +9,11 @@
 
 	<body>
 		
-		<h1>E.see</h1>
-		
-		<div id = "logo">
-			<img src="images/protein-icon_128.png" alt="Logo E.see" />
+		<div id = "logo_titre">
+			<h1>E.see</h1>
+			<img id = "logo" src="images/protein-icon_128.png" alt="Logo E.see" />
 		</div>
-			
+					
 		<div id="menu">
 			<ul id="onglets">
 				<li id ="onglets_li">

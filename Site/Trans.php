@@ -10,12 +10,11 @@
 
 	<body>
 		
-		<h1>E.see</h1>
-		
 		<script type="text/javascript"> $(document).ready(function(){ $('.top').click(function(){ $('html,body').animate({scrollTop: 0},'slow'); }); }); </script>
 		
-		<div id = "logo">
-			<img src="images/protein-icon_128.png" alt="Logo E.see" />
+		<div id = "logo_titre">
+			<h1>E.see</h1>
+			<img id = "logo" src="images/protein-icon_128.png" alt="Logo E.see" />
 		</div>
 		
 		<div id="menu">
