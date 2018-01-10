@@ -6,6 +6,7 @@ h2,h3
 
 body
 {
+	margin-right: 0.8cm;
 	color:white;
 	background-color:white;
 	background-image:url(images/fond.png);
@@ -80,7 +81,7 @@ h1
     background-color: #111;
 }
 
-.active 
+.active
 {
     background-color: #87CEEB;
 }
