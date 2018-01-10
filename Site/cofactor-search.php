@@ -14,7 +14,7 @@
 		
 		<div id = "logo_titre">
 			<h1>E.see</h1>
-			<img id = "logo" src="images/protein-icon_128.png" alt="Logo E.see" />
+			<img title = "E.see" id = "logo" src="images/protein-icon_128.png" alt="Logo E.see" />
 		</div>
 				
 		<div id="menu">
@@ -107,7 +107,9 @@
 					if ($num >20)
 					{
 		?>
-					<a href="#"><img src="images/fleche.png" align="right" class="top" title="Retour en haut"/></a>
+					<div id = "Go_top">
+						<a href="#"><img src="images/fleche.png" align = "right" class="top" title="Retour en haut"/></a>
+					</div>
 		<?php
 					}
 				}

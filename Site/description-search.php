@@ -92,7 +92,7 @@
 					{
 						$num = $key+1;
 		?>
-						<div >
+						<div>
 						<form method="POST" action="enzyme-search-ec.php" target="_BLANK">
 							<strong> Enzyme <?php echo $num; ?>: </strong>
 							<input type="txt" readonly="readonly" id = "enzyme_bouton" size = "9" name="Var-Vers-Enzyme" value="<?php echo $value; ?>"></input>
@@ -108,7 +108,9 @@
 					if ($num >20)
 					{
 		?>
-						<a href="#"><img src="images/fleche.png" align="right" class="top" title="Retour en haut"/></a>
+					<div id = "Go_top">
+						<a href="#"><img src="images/fleche.png" align = "right" class="top" title="Retour en haut"/></a>
+					</div>
 		<?php
 					}
 

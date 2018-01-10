@@ -145,7 +145,23 @@
 				array_push($Arr_id_p, $result['id_p']);
 			}
 		?>					
-			<strong>Prosite Id :</strong> <?php if (!empty($Arr_id_p)){foreach ($Arr_id_p as &$value){echo $value."; ";}} else {echo "-";} ?>
+			<strong>Prosite Id :</strong> 
+			<?php 
+				if (!empty($Arr_id_p))
+				{
+					foreach ($Arr_id_p as &$value)
+					{
+						$ref = "https://prosite.expasy.org/".$value;
+				?>
+						<a title = "link to Prosite" target="_BLANK" href= "<?php echo $ref;?>" ><?php echo $value;?></a> , 
+				<?php
+					}
+				} 
+				else 
+				{
+					echo "-";
+				} 
+			?>
 			<br />
 			<br />
 		<?php
@@ -161,7 +177,23 @@
 				array_push($Arr_id_sp, $result['id_sp']);
 			}
 		?>					
-				<strong>SwissProt Id :</strong> <?php if (!empty($Arr_id_sp)){foreach ($Arr_id_sp as &$value){echo $value.", ";}} else {echo "-";} ?>
+				<strong>SwissProt Id :</strong> 
+				<?php 
+					if (!empty($Arr_id_sp))
+					{
+						foreach ($Arr_id_sp as &$value)
+							{
+								$ref = "http://www.uniprot.org/uniprot/".$value;
+				?>
+								<a title = "link to Uniprot" target="_BLANK" href= "  <?php echo $ref;?> " ><?php echo $value;?></a> , 
+				<?php 
+							}
+					} 
+					else 
+					{
+						echo "-";
+					} 
+				?>
 				<br />
 				<br />
 		<?php
@@ -186,10 +218,19 @@
 				{
 					foreach ($Arr_pub_tit as $key=>$value)
 					{
-						echo "* Title: ".$value. "<br />"; 
-						$year = $Arr_pub_year[$key];
-						echo "Year: ".$Arr_pub_year[$key]. "<br />";
-						echo "Authors: ".$Arr_pub_auteur[$key]. "<br />". "<br />";
+		?>
+						<ul>
+							<li>
+								<strong>Title: </strong><?php echo $value;?><br />
+		<?php 
+								$year = $Arr_pub_year[$key];
+								echo "Year: ".$Arr_pub_year[$key]. "<br />";
+								echo "Authors: ".$Arr_pub_auteur[$key]. "<br />";
+		?>						
+							</li>
+						</ul>
+			
+		<?php
 					}
 				} 
 			else 

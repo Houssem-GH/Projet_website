@@ -83,7 +83,9 @@
 					}
 				}
 		?>
-		<a href="#"><img src="images/fleche.png" class="top" align="right" title="Retour en haut"/></a>	
+		<div id = "Go_top">
+			<a href="#"><img src="images/fleche.png" align = "right" class="top" title="Retour en haut"/></a>
+		</div>
 		
 		
 	</body>
