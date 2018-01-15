@@ -23,7 +23,7 @@
 					<a href="Requetes.html"> About Enzymes </a>
 				</li>
 				<li id = "onglets_li">
-					<a href="Visualisation.html"> Visualize Metabolic Network </a>
+					<a href="Visualisation.html"> Statistics About Enzymes </a>
 				</li>
 				<li id = "onglets_li" style="float:right">
 					<a href="Contacts.html"> Contact </a>
@@ -35,10 +35,10 @@
 		<br/>
 		<ul id = "list_of_recherche">
 			<li><form method="POST" action="enzyme-search-ec.php"><a><b>Search by EC number</b></a>
-				  <input name="field1" size="3" maxlength="1">
-				  <input name="field2" size="3" maxlength="2">
-				  <input name="field3" size="3" maxlength="2">
-				  <input name="field4" size="3" maxlength="3">
+				  <input style = "text-align: center; font-weight: bold;" name="field1" size="5" maxlength="1">
+				  <input style = "text-align: center; font-weight: bold;"  name="field2" size="5" maxlength="2">
+				  <input style = "text-align: center; font-weight: bold;" name="field3" size="5" maxlength="2">
+				  <input style = "text-align: center; font-weight: bold;" name="field4" size="5" maxlength="3">
 				  <input value="Search" type="submit">
 				  <input value="Clear" name="reset" type="reset">
 				</form>
@@ -47,7 +47,7 @@
 			</li>
 
 			<li><form method="POST" action="description-search.php"><a><b>Search by key words</b></a> 
-					<input name="field_Des" size="40"> <input value="Search" type="submit">
+					<input style = "font-weight: bold;" name="field_Des" size="40"> <input value="Search" type="submit">
 					<input value="Clear" name="reset" type="reset">
 				</form>
 				<br />

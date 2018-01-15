@@ -26,7 +26,7 @@
 				  <a href="Requetes.html"> About Enzymes </a>
 			  </li>
 			  <li id = "onglets_li">
-				  <a href="Visualisation.html"> Visualize Metabolic Network </a>
+				  <a href="Visualisation.html"> Statistics About Enzymes </a>
 			  </li>
 			  <li id = "onglets_li" style="float:right">
 				  <a href="Contacts.html"> Contact </a>
@@ -44,8 +44,9 @@
 			{
 					die('Erreur : ' . $e->getMessage());
 			}
-			
+			$Val_aff = $_POST["field_Des"];
 			$VALEUR = strtolower($_POST["field_Des"]);
+			
 			
 			if (empty($_POST["field_Des"]))
 			{
@@ -76,7 +77,7 @@
 			
 			if (empty($Arr_EC))
 				{
-					echo "there is no enzyme related to: \"".$VALEUR."\"";
+					echo "there is no enzyme related to: \"".$Val_aff."\"";
 		?>
 					<br />
 					<br />
@@ -87,7 +88,7 @@
 				}
 			else
 				{	
-					echo "<strong>List of enzymes related to: \"".$VALEUR."\"</strong><br /><br />";
+					echo "<strong>List of enzymes related to: \"".$Val_aff."\"</strong><br /><br />";
 					foreach ($Arr_EC as $key=>$value)
 					{
 						$num = $key+1;

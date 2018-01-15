@@ -23,7 +23,7 @@
 					<a href="Requetes.html"> About Enzymes </a>
 				</li>
 				<li id ="onglets_li">
-					<a href="Visualisation.html"> Visualize Metabolic Network </a>
+					<a href="Visualisation.html"> Statistics About Enzymes </a>
 				</li>
 				<li id ="onglets_li" class="active" style="float:right">
 					<a href="Contacts.html"> Contact</a>
@@ -40,11 +40,10 @@
 			$destinataire="e.see.gd@gmail.com";
 
 			////ici on détermine l'expediteur et l'adresse de réponse
-			$headers = "From: <".$mail.">" . "\r\n";
-
+			$headers .= "From: <".$mail.">" . "\r\n";
 			if (mail($destinataire,$objet,$message)) 
 			{
-			mail($destinataire,$objet,$message);
+			mail($destinataire,$objet,$message,$headers);
 		?>
 			<br/><p align="center"> Your email was sent, thank you <br/><br/> </p>
 		<?php
@@ -59,3 +58,5 @@
 			<p align="center">
 			<a href="Page_principale.html">Go to home page</a>
 			</p>
+	</body>
+</html>

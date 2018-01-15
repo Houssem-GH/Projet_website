@@ -4,7 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" href="Style.css">
 		<link rel="icon" type="image/png" href="images/protein-icon.png" />
-		<title>Visualize Metabolic Network</title>
+		<title>Statistics about enzymes</title>
 	</head>
 
 	<body>
@@ -23,41 +23,43 @@
 					<a href="Requetes.html"> About Enzymes </a>
 				</li>
 				<li id = "onglets_li" class="active">
-					<a href="Visualisation.html"> Visualize Metabolic Network </a>
+					<a href="Visualisation.html"> Statistics About Enzymes </a>
 				</li>
 				<li id = "onglets_li" style="float:right">
 					<a href="Contacts.html"> Contact </a>
 				</li>
 			</ul>
 		</div>
-
-<!--
-		<applet
-			code ="HelloWorld.java" 
-			codebase="/var/www/html" 
-			height="150" 
-			width="300">
-		</applet> 
--->
-
-<!--
-		<div >
-			<APPLET CODE = "Main.class" WIDTH = "800" HEIGHT = "500"></APPLET>
-		</div>
--->
-
-<!--
-		<object classid="clsid:CAFEEFAC-0015-0000-0000-ABCDEFFEDCBA" style="height: 500px; width: 700px;">
-			<param name="code" value="Main.class">
-			<comment>
-				<embed code="Main.class" type="application/x-java-applet" height="500" width="700">
-					<noembed>
-						This browser appears to lack support for Java Applets.
-					</noembed>
-				</embed>
-			</comment>
-		</object>
-		-->
+		
+		<h2>Enzyme statistics</h2>
+		<br/>
+		
+		<ul id = "list_of_recherche">
+			<li><form method="POST" action="visualisation_class.php"><a><b>Proportion of enzymes classes</b></a> 
+					<input value="E.see" type="submit">								
+				</form>
+				<br />
+				<br />
+			</li>
+								
+			<li><form action="visualisation_subclass.php" method="POST"><a><b>Choose the enzyme class</b></a>
+					<select name="visu_class"> 
+							<option value="Oxidoreductase">Oxidoreductase</option>
+							<option value="Transferase">Transferase</option>
+							<option value="Hydrolase">Hydrolase</option>
+							<option value="Lyase">Lyase</option>
+							<option value="Isomerase">Isomerase</option>
+							<option value="Ligase">Ligase</option>
+					</select>
+					<input value="Choose" type="submit">
+				</form>
+				<br />
+				<br />
+			</li>
+			
+		</ul>
+			
+		<div id="piechart_3d" style="width: 800px; height: 500px; float: right; margin-right: 0cm; margin-top: -1.9cm;"></div>
 
 	</body>
 </html>

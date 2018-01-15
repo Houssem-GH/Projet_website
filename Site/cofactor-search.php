@@ -25,7 +25,7 @@
 			  <li id = "onglets_li" class="active"><a href="Requetes.html"> About Enzymes </a>
 			  </li>
 			  <li id = "onglets_li">
-				  <a href="Visualisation.html"> Visualize Metabolic Network </a>
+				  <a href="Visualisation.html"> Statistics About Enzymes </a>
 			  </li>
 			  <li id = "onglets_li" style="float:right">
 				  <a href="Contacts.html"> Contact </a>
@@ -43,7 +43,7 @@
 			{
 					die('Erreur : ' . $e->getMessage());
 			}
-			
+			$Val_aff = $_POST["field_cofactor"];
 			$VALEUR = strtolower($_POST["field_cofactor"]);
 			
 			if (empty($_POST["field_cofactor"]))
@@ -74,7 +74,7 @@
 			
 			if (empty($Arr_EC))
 				{
-					echo "there is no enzyme using \"".$VALEUR."\" as cofactor";
+					echo "there is no enzyme using \"".$Val_aff."\" as cofactor";
 		?>
 					<br />
 					<br />
@@ -85,7 +85,7 @@
 				}
 			else
 				{
-					echo "<strong>List of enzymes using: \"".$VALEUR."\" as cofactor</strong><br /><br />";				
+					echo "<strong>List of enzymes using: \"".$Val_aff."\" as cofactor</strong><br /><br />";				
 					foreach ($Arr_EC as $key=>$value)
 					{
 						$num = $key+1;

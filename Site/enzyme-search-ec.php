@@ -23,7 +23,7 @@
 					<a href="Requetes.html"> About Enzymes </a>
 				</li>
 				<li id = "onglets_li">
-					<a href="Visualisation.html"> Visualize Metabolic Network </a>
+					<a href="Visualisation.html"> Statistics About Enzymes </a>
 				</li>
 				<li id = "onglets_li" style="float:right">
 					<a href="Contacts.html"> Contact </a>
