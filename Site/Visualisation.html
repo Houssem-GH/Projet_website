@@ -33,6 +33,8 @@
 		
 		<h2>Enzyme statistics</h2>
 		<br/>
+		<br/>
+		<br/>
 		
 		<ul id = "list_of_recherche">
 			<li><form method="POST" action="visualisation_class.php"><a><b>Proportion of enzymes classes</b></a> 
@@ -44,12 +46,12 @@
 								
 			<li><form action="visualisation_subclass.php" method="POST"><a><b>Choose the enzyme class</b></a>
 					<select name="visu_class"> 
-							<option value="Oxidoreductase">Oxidoreductase</option>
-							<option value="Transferase">Transferase</option>
-							<option value="Hydrolase">Hydrolase</option>
-							<option value="Lyase">Lyase</option>
-							<option value="Isomerase">Isomerase</option>
-							<option value="Ligase">Ligase</option>
+							<option value="Oxidoreductase">Oxidoreductase (EC 1.x.x.x)</option>
+							<option value="Transferase">Transferase (EC 2.x.x.x)</option>
+							<option value="Hydrolase">Hydrolase (EC 3.x.x.x)</option>
+							<option value="Lyase">Lyase (EC 4.x.x.x)</option>
+							<option value="Isomerase">Isomerase (EC 5.x.x.x)</option>
+							<option value="Ligase">Ligase (EC 6.x.x.x)</option>
 					</select>
 					<input value="Choose" type="submit">
 				</form>
@@ -58,8 +60,5 @@
 			</li>
 			
 		</ul>
-			
-		<div id="piechart_3d" style="width: 800px; height: 500px; float: right; margin-right: 0cm; margin-top: -1.9cm;"></div>
-
 	</body>
 </html>

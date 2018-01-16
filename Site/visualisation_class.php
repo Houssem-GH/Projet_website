@@ -104,7 +104,8 @@
 			var options = {
 			is3D: true,
 			backgroundColor: 'transparent',
-			legend: {position: 'bottom', textStyle: {bold:true , color: 'white', fontSize: 11}},
+			legend: {pagingTextStyle: { color: 'white' }, scrollArrows:{ activeColor: '#2994B2', inactiveColor:'transparent' } , 
+				position: 'bottom', textStyle: {bold:true , color: 'white', fontSize: 12}},
 			};
 
 			var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -112,7 +113,7 @@
 			}
 		</script>
 		
-		<div id="piechart_3d" style="width: 810px; height: 500px; float: right; margin-right: 6.5cm; margin-top: -1.9cm;"></div>
+		<div id="piechart_3d"></div>
 	
 		
 

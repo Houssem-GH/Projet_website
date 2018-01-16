@@ -84,11 +84,41 @@
 		<?php
 				}
 			else
-				{
-					echo "<strong>List of enzymes using: \"".$Val_aff."\" as cofactor</strong><br /><br />";				
+				{					
+					echo "<strong>List of enzymes using: \"".$Val_aff."\" as cofactor</strong><br /><br />";	
+					$Oxido = 0;
+					$Transferase = 0;
+					$Hydrolase = 0;
+					$Lyase = 0 ;
+					$Isomerase = 0 ;
+					$Ligase = 0;			
 					foreach ($Arr_EC as $key=>$value)
 					{
 						$num = $key+1;
+						if (stristr($Arr_EC[$key], 'EC 1.') == true )
+						{
+							$Oxido ++;
+						} 
+						else if (stristr($Arr_EC[$key], 'EC 2.') == true )
+						{
+							$Transferase ++;
+						} 
+						else if (stristr($Arr_EC[$key], 'EC 3.') == true )
+						{
+							$Hydrolase ++;
+						} 
+						else if (stristr($Arr_EC[$key], 'EC 4.') == true )
+						{
+							$Lyase ++;
+						} 
+						else if (stristr($Arr_EC[$key], 'EC 5.') == true )
+						{
+							$Isomerase ++;
+						} 
+						else if (stristr($Arr_EC[$key], 'EC 6.') == true )
+						{
+							$Ligase ++;
+						}						
 		?>
 						<div >
 						<form method="POST" action="enzyme-search-ec.php" target="_BLANK">
