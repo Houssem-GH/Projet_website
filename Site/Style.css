@@ -64,20 +64,26 @@ h1
 #onglets_li 
 {
     float: left;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 0.5px 0.5px grey ;
 }
 
 #onglets_li a 
 {
+    transition: 0.3s ease;
     display: block;
     color: white;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
+    padding: 14px 16px;
+    margin: 0 20px;
+    border-top: 2px solid white;  
 }
 
 #onglets_li a:hover:not(.active) 
 {
-    background-color: #111;
+    padding: 6px 16px;
+    margin: 8px 35px;
 }
 
 .active
@@ -91,7 +97,7 @@ h1
 /*poisitionner le video et le txt*/
 #conteneur_txt_video
 {
-	margin-bottom: 8cm;
+	margin-bottom: 2cm;
 }
 #video
 {
@@ -106,8 +112,7 @@ h1
     text-align: justify;
     text-justify: inter-word;
     Line-Height: 1.5;
-	margin-left: 0.8cm;
-	
+	margin-left: 0.8cm;	
 }
 
 #trait_home
@@ -142,7 +147,7 @@ h1
 #list_of_recherche
 {
 	margin-left: 1cm;
-	font-size: 125%;
+	font-size: 100%;
 	margin-bottom: 4cm;
 }
 

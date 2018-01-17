@@ -86,6 +86,9 @@
 			else
 				{					
 					echo "<strong>List of enzymes using: \"".$Val_aff."\" as cofactor</strong><br /><br />";	
+		?>
+					<div style = "margin-right: 0cm; width: 600px; height: 400px; float: right;" id="piechart_3d1"></div>
+		<?php					
 					$Oxido = 0;
 					$Transferase = 0;
 					$Hydrolase = 0;
@@ -146,5 +149,37 @@
 			$answerCOF->closeCursor(); // Termine le traitement de la requête
 		?>
 		
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+			google.charts.load("current", {packages:["corechart"]});
+			google.charts.setOnLoadCallback(drawChart);
+			function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+			['Enzymes', 'class'],
+			['Oxidoreductase',	<?php echo $Oxido?>],
+			['Transferase',		<?php echo $Transferase?>],
+			['Hydrolase',		<?php echo $Hydrolase?>],
+			['Lyase',		    <?php echo $Lyase?>],
+			['Isomerase',		<?php echo $Isomerase?>],
+			['Ligase',		    <?php echo $Ligase?>]
+			]);
+
+			var options = {
+			title: 'Enzyme classes proportion',
+			titleTextStyle: {
+								color: 'white',   
+								fontSize: 20, 
+								bold: true, 
+							},
+			pieHole: 0.4,
+			backgroundColor: 'transparent',
+			legend: {pagingTextStyle: { color: 'white' }, scrollArrows:{ activeColor: '#2994B2', inactiveColor:'transparent' } , 
+				position: 'right', textStyle: {bold:true , color: 'white', fontSize: 12}},
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('piechart_3d1'));
+			chart.draw(data, options);
+			}
+		</script>
 	</body>
 </html>
